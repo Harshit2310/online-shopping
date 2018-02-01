@@ -20,39 +20,54 @@
 
 <title>Online Shopping -${title}</title>
 
+<script>
+	window.menu = '${title}';
+</script>
+
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Solar Theme -->
+<link href="${css}/bootstrap-solar-theme.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 
 </head>
 <body>
-	<!-- Navigation -->
-	<%@include file="/WEB-INF/shared/navbar.jsp"%>
+	<div class="wrapper">
 
-	<!-- Page Content -->
-	<!-- Loading the home content -->
-	<c:if test="${userClickHome == true }">
-		<%@include file="home.jsp"%>
-	</c:if>
+		<!-- Navigation -->
+		<%@include file="/WEB-INF/shared/navbar.jsp"%>
 
-	<!-- Loading the About Us content -->
-	<c:if test="${userClickAbout == true }">
-		<%@include file="about.jsp"%>
-	</c:if>
+		<!-- Page Content -->
+		<div class="content">
+		
+			<!-- Loading the home content -->
+			<c:if test="${userClickHome == true }">
+				<%@include file="home.jsp"%>
+			</c:if>
 
-	<!-- Loading the Contact Us content -->
-	<c:if test="${userClickContact == true }">
-		<%@include file="contacts.jsp"%>
-	</c:if>
+			<!-- Loading the About Us content -->
+			<c:if test="${userClickAbout == true }">
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- Footer -->
-	<%@include file="/WEB-INF/shared/footer.jsp"%>
+			<!-- Loading the Contact Us content -->
+			<c:if test="${userClickContact == true }">
+				<%@include file="contacts.jsp"%>
+			</c:if>
+		</div>
+		<!-- Footer -->
+		<%@include file="/WEB-INF/shared/footer.jsp"%>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.js"></script>
-	<script src="${js}/bootstrap.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.js"></script>
+		<script src="${js}/bootstrap.min.js"></script>
 
+		<!-- Self Coded JavaScript  -->
+		<script src="${js}/myapp.js"></script>
+
+	</div>
 </body>
 </html>
