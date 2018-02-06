@@ -49,6 +49,18 @@ public class Category {
 		this.active = active;
 	}
 
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", active=" + active + "]";
+	}
+
+
+
+
 	/*
 	 * Private Fields
 	 */
