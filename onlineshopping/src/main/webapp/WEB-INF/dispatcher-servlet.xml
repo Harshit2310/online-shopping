@@ -8,7 +8,7 @@
 
 	<context:component-scan base-package="net.kzn.onlineshopping.controller" />
 	
-	<context:component-scan base-package="net.kzn.shoppingbackend.daoimpl" />
+	<context:component-scan base-package="net.kzn.shoppingbackend" />
 	
 	<context:annotation-config />
 

@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// Change as per DBMS
-	private final static String Database_URL = "jdbc:sqlserver://MSSQLSERVER\\localhost;databaseName=";
+	private final static String Database_URL = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=webMall";
 	private final static String Database_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private final static String Database_DIALECT = "org.hibernate.dialect.SQLServerDialect";
 	private final static String Database_USERNAME = "Shop_Owner";
@@ -62,7 +62,6 @@ public class HibernateConfig {
 	//transactionmanager bean
 	@Bean
 	public HibernateTransactionManager getTransactionManger(SessionFactory sessionFactory) {
-
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
 	}
