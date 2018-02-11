@@ -21,16 +21,24 @@
 <meta name="author" content="">
 
 <title>Online Shopping -${title}</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script>
-	window.menu = '${title}';
+window.menu = '${title}';
+window.ContextRoot = '${ContextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+
 <!-- Bootstrap Solar Theme -->
 <link href="${css}/bootstrap-solar-theme.css" rel="stylesheet">
+
+<!-- DataTables CSS -->
+<link href="${css}/datatables.css" rel="stylesheet">
+<link href="${css}/datatables.min.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -64,6 +72,11 @@
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+			
+			<!-- Loading the Single product page content -->
+			<c:if test="${userClickShowProduct}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
 	
 		</div>
 		<!-- Footer -->
@@ -72,6 +85,12 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
+
+		<!-- Jquery Data-Table -->
+		<script src="${js}/datatables.js"></script>		
+		<script src="${js}/datatables.min.js"></script>		
+
+
 
 		<!-- Self Coded JavaScript  -->
 		<script src="${js}/myapp.js"></script>

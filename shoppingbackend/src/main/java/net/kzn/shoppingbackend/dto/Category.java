@@ -58,7 +58,7 @@ public class Category implements Serializable {
 
 
 	/*
-	 * Private fields
+	 * Private Fields
 	 * */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
